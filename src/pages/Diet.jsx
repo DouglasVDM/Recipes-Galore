@@ -1,7 +1,7 @@
 import React, {useEffect,  useState } from 'react';
 import styled from 'styled-components';
 // import { motion } from 'framer-motion';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Diet() {
 
