@@ -2,38 +2,37 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import recipeData from "../recipeData.json";
 
 function Popular() {
   const [popular, setPopular] = useState([]);
 
-  // useEffect(() => {
-  //     getPopular();
-  // }, []);
+  useEffect(() => {
+      getPopular();
+  }, []);
   useEffect(() => {
     getPopular();
   }, []);
 
-  // const getPopular = async () => {
+  const getPopular = async () => {
 
-  //     const check = localStorage.getItem('popular');
+      const check = localStorage.getItem('popular');
 
-  //     if (check && check !== "[object JSON]") {
-  //       // Valid JSON data exists in local storage
-  //       setPopular(JSON.parse(check));
-  //     } else {
-  //       // Fetch new data from API
-  //       const api = await fetch(
-  //         `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=8`
-  //       );
-  //       const data = await api.json();
+      if (check && check !== "[object JSON]") {
+        // Valid JSON data exists in local storage
+        setPopular(JSON.parse(check));
+      } else {
+        // Fetch new data from API
+        const api = await fetch(
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=8`
+        );
+        const data = await api.json();
 
-  //       // Store valid JSON data in local storage
-  //       localStorage.setItem('popular', JSON.stringify(data.recipes));
-  //       setPopular(data.recipes);
-  //     }
+        // Store valid JSON data in local storage
+        localStorage.setItem('popular', JSON.stringify(data.recipes));
+        setPopular(data.recipes);
+      }
 
-  // }
+  }
   const getPopular = async () => {
     const check = localStorage.getItem("popular");
     console.log("check", check);

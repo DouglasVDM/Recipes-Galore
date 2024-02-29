@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link, useParams } from 'react-router-dom';
 
 function Diet() {
-  const [diet, setDiet] = useState(recipeData);
+  const [diet, setDiet] = useState([]);
   let params = useParams();
 
   const getDiet = async (name) => {
