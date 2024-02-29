@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/react-splide/css';
+import { Link } from "react-router-dom";
 
 
 
@@ -58,9 +59,11 @@ function Popular() {
                             <SplideSlide key={recipe.id}>
 
                                 <Card>
+                                    <Link to={"/recipe/" + recipe.id}>
                                     <p>{recipe.title}</p>
                                     <img src={recipe.image} alt={recipe.title} />
                                     <Gradient />
+                                    </Link>
                                 </Card>
                             </SplideSlide>
                         );
@@ -79,6 +82,8 @@ min-height: 25rem;
 border-radius: 2rem;
 overflow: hidden;
 position: relative;
+border-style: solid;
+border-color: #d9e3eb;
 
 img{
     border-radius: 2rem;
