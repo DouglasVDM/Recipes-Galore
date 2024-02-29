@@ -1,4 +1,5 @@
 import Popular from "../components/Popular";
+// import NavBar from "../components/NavBar"
 
 
 
@@ -8,7 +9,7 @@ function Home() {
     return (
         <div>
             <Popular />
-
+            {/* <NavBar /> */}
         </div>
     )
 }
